@@ -22,6 +22,7 @@ passport.use(
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
       callbackURL: 'http://localhost:5000/auth/google/callback',
+      proxy: true     // Fix issues related to proxyed domains. http/https
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id}).then((existingUser) => {

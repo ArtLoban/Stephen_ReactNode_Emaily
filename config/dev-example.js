@@ -1,3 +1,4 @@
+/* prod/dev env creds */
 const MONGO_USER = '';
 const MONGO_PASSWORD = '';
 const MONGO_DB = '';
