@@ -21,7 +21,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-if (false) {  // The same as below. Just as example!
+if (false) {  // TODO: Info: The same as below. Just as example!
   const authRoutes = require('./routes/authRoutes');
   authRoutes(app);
 } else {
