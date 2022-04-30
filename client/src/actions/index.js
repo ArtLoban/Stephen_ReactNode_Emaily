@@ -10,10 +10,6 @@ export const fetchUser = () => {
   return async (dispatch) => {
     const res = await axios.get('/api/current_user');
 
-    /* Menual response delay for test*/
-    setTimeout(() => {
-      dispatch({type: FETCH_USER, payload: res.data });
-    }, 1000);
-
+    dispatch({type: FETCH_USER, payload: res.data });
   }
 };
