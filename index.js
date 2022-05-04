@@ -11,8 +11,8 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-app.use(bodyParser.json());
-
+/* Middlewares */
+app.use(bodyParser.json());   // Parse POST body
 /* Set cookies auth */
 app.use(
   cookieSession({
@@ -20,8 +20,7 @@ app.use(
     keys: [keys.cookieKey],
   })
 );
-
-app.use(passport.initialize());
+app.use(passport.initialize()); // It's set so that Automatically adds current user object to `req`
 app.use(passport.session());
 
 if (false) {  // TODO: Info: The same as below. Just as example!
